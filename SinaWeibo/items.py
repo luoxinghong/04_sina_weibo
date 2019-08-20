@@ -48,3 +48,14 @@ class Weiboitem(Item):
     #微博的唯一id，用于去重
     weibo_id = Field()
 
+
+class HotWeiBoitem(Item):
+    table_name ='hot_weibo'
+    #用户唯一id
+    wb_id = Field()
+    #微博作者
+    author = Field()
+    # 微博内容
+    content = Field()
+
+
