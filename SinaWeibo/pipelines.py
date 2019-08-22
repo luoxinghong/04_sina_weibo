@@ -102,3 +102,5 @@ class MysqlTwistedPipline(object):
         values = ','.join(['%s'] * len(data))
         sql = 'insert into %s(%s) value(%s)' % (item.table_name, keys, values)
         cursor.execute(sql, tuple(data.values()))
+    def close_spider(self, spider):
+        self.dbpool.close()
